@@ -1,0 +1,255 @@
+#input_update{
+    background-color: lightgray;
+}
+
+#myInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    /*padding: 12px 20px 12px 40px;  Add some padding */
+    margin-top: 12px;
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+    float: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#myTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+    margin-bottom: 20px;
+}
+
+#parse{
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+    margin-bottom: 20px;
+}
+
+#myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+}
+
+#myTable tr {
+    border-bottom: 1px solid #ddd; 
+}
+
+#myTable tr.header, #myTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+#btn_cad_aluno {
+    margin-bottom: 5px;
+}
+
+#div_cad_aluno{
+    text-align: right;
+    margin-right: 400px;
+}
+
+#div_cad_aluno input{
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+#cabecalho{
+    margin-bottom: 40px;
+}
+
+#perimetros_osseos{
+    width: 100%;
+}
+
+#perimetros_osseos_imagem{
+    width: 30%;
+    float: left;
+    margin-top: 70px;
+}
+
+#perimetros_osseos_quest{
+    width: 70%;
+    float: left;
+}
+
+#sidebar_login_info{
+    color: #fff;
+    margin-top: 20px;
+}
+
+.input_update_btn{
+    margin-bottom: 10px;
+}
+
+/*Formulário de cadastro de alunos*/
+
+* {box-sizing: border-box}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type="date"]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #fff;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+table{
+    padding-right: 3px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: #000;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+/*Formulário de cadastro de alunos*/
+
+#btn_cad_aluno{
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+
+a{
+    text-decoration: black;
+}
+
+/*WEBCAM TELA DE CADASTRO E FOTO DO ALUNO*/
+
+video { border: 1px solid #ccc; display: block; margin: 0 0 20px 0; }
+#canvas { margin-top: 20px; border: 1px solid #ccc; display: block; }
+
+/*CAIXA MODAL USADA EM manage-users.php*/
+
+ /* The Modal (background) */
+ .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+} 
+
+#box_escolher_treino{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*ESTILO USADO EM manage-users.php nas TABS para escolher os treinos*/
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.accordion_panel{
+    background-color: #fff;
+    margin-bottom: 20px;
+}

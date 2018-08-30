@@ -1,0 +1,120 @@
+<!-- Modelo de modal-box que pode ser usado futuramente -->
+
+
+<td><button onclick="window.location.href = 'http://localhost/akad/manage-users.php';" class="w3-button w3-black">Editar Cadastro</button></td>
+
+<td><button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Opções</button></td>
+
+
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content" align="center">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <div id="box_escolher_treino">
+          <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'London')">Treino A</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">Treino B</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Treino C</button>
+            <button class="tablinks" onclick="openCity(event, 'TreinoD')">Treino D</button>
+          </div>
+          <div id="London" class="tabcontent">
+            <h3>Treino A</h3>
+            <form action="edit-treino-a.php?aluno_matricula=$campo["id"]&aluno_nome=$campo["nome"]" method="get">
+              <input type="hidden" name="aluno_matricula" value="<?php echo $_SESSION[$aux]; ?>">
+              <input type="hidden" name="aluno_nome" value="<?php echo $aluno_nome; ?>">
+              <input type="submit">
+              <a href="localhost/akad/edit-treino-a.php?aluno_matricula=$campo["id"]&aluno_nome=$campo["nome"]"><button class="registerbtn">Editar Treino.</button></a>
+              <!-- <button type="submit" class="registerbtn">Visualizar Treino.</button> -->
+            </form>
+            <form action="edit-treino-a.php" method="get">
+              <input type="hidden" name="aluno_matricula" value="<?php echo $aluno_matricula ?>">
+              <input type="hidden" name="aluno_nome" value="<?php echo $aluno_nome; ?>">
+              <a href="localhost/akad/edit-treino-a.php?aluno_matricula=$aluno_matricula&aluno_nome=$aluno_nome"><button class="registerbtn">Editar Treino.</button></a>
+              <!-- <button type="submit" class="registerbtn">Visualizar Treino.</button> -->
+            </form>
+          </div>
+          <div id="Paris" class="tabcontent">
+            <h3>Treino B</h3>
+            <form action="edit-treino-a.php" method="get">
+              <input type="hidden" name="aluno_matricula2" value="<?php echo $aluno_matricula; ?>">
+              <input type="hidden" name="aluno_nome2" value="<?php echo $aluno_nome; ?>">
+              <a href="localhost/akad/edit-treino-a.php?aluno_matricula=$aluno_matricula&aluno_nome=$aluno_nome"><button class="registerbtn">Editar Treino.</button></a>
+              <!-- <button type="submit" class="registerbtn">Visualizar Treino.</button> -->
+            </form>
+            <form action="edit-treino-a.php" method="get">
+              <input type="hidden" name="aluno_matricula" value="<?php echo $aluno_matricula; ?>">
+              <input type="hidden" name="aluno_nome" value="<?php echo $aluno_nome; ?>">
+              <a href="localhost/akad/edit-treino-a.php?aluno_matricula=$aluno_matricula&aluno_nome=$aluno_nome"><button class="registerbtn">Editar Treino.</button></a>
+              <!-- <button type="submit" class="registerbtn">Visualizar Treino.</button> -->
+            </form>
+          </div>
+          <div id="Tokyo" class="tabcontent">
+            <h3>Treino C</h3>
+            <form action="edit-treino-a.php" method="get">
+              <input type="hidden" name="aluno_matricula" value="<?php echo $aluno_matricula; ?>">
+              <input type="hidden" name="aluno_nome" value="<?php echo $aluno_nome; ?>">
+              <a href="localhost/akad/edit-treino-a.php?aluno_matricula=$aluno_matricula&aluno_nome=$aluno_nome"><button class="registerbtn">Editar Treino.</button></a>
+              <!-- <button type="submit" class="registerbtn">Visualizar Treino.</button> -->
+            </form>
+            <form action="edit-treino-a.php" method="get">
+              <input type="hidden" name="aluno_matricula" value="<?php echo $aluno_matricula; ?>">
+              <input type="hidden" name="aluno_nome" value="<?php echo $aluno_nome; ?>">
+              <a href="localhost/akad/edit-treino-a.php?aluno_matricula=$aluno_matricula&aluno_nome=$aluno_nome"><button class="registerbtn">Editar Treino.</button></a>
+              <!-- <button type="submit" class="registerbtn">Visualizar Treino.</button> -->
+            </form>
+          </div>
+          <div id="TreinoD" class="tabcontent">
+            <h3>Treino D</h3>
+            <form action="edit-treino-a.php" method="get">
+              <input type="hidden" name="aluno_matricula" value="<?php echo $aluno_matricula; ?>">
+              <input type="hidden" name="aluno_nome" value="<?php echo $aluno_nome; ?>">
+              <a href="localhost/akad/edit-treino-a.php?aluno_matricula=$aluno_matricula&aluno_nome=$aluno_nome"><button class="registerbtn">Editar Treino.</button></a>
+              <!-- <button type="submit" class="registerbtn">Visualizar Treino.</button> -->
+            </form>
+            <form action="edit-treino-a.php" method="get">
+              <input type="hidden" name="aluno_matricula" value="<?php echo $aluno_matricula ?>">
+              <input type="hidden" name="aluno_nome" value="<?php echo $aluno_nome; ?>">
+              <a href="localhost/akad/edit-treino-a.php?aluno_matricula=$aluno_matricula&aluno_nome=$aluno_nome"><button class="registerbtn">Editar Treino.</button></a>
+              <!-- <button type="submit" class="registerbtn">Visualizar Treino.</button> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <?php
+date_default_timezone_set('America/Sao_Paulo');
+
+$script_tz = date_default_timezone_get();
+
+//Conexão com o BD
+$link = mysqli_connect("localhost", "root", "", "akad_test");
+
+//Recebe os dados do form em cadastrar-aluno.php
+$nome = $_POST['nome'];
+$cpf = $_POST['cpf'];
+$nascimento = $_POST['nascimento'];
+$email = $_POST['email'];
+$endereco = $_POST['endereco'];
+$telefone = $_POST['telefone'];
+$sexo = $_POST['sexo'];
+$valor_debito = $_POST['valor_debito'];
+$data_pagamento = $_POST['data_pagamento'];
+$observacao = $_POST['observacao'];
+//$data = date("d/m/Y", mktime(gmdate("d"), gmdate("m"), gmdate("Y")));
+$hora = date("H:i:s", mktime(gmdate("H")-3, gmdate("i"), gmdate("s")));
+
+$data = date("Y/m/d", mktime(gmdate("d"), gmdate("m"), gmdate("Y")));
+
+// $query_add_aluno = 'INSERT INTO aluno_dados (nome, cpf, nascimento, email, endereco, telefone) VALUES ("'.$nome.'", "'.$cpf.'", "'.$nascimento.'", "'.$email.'", "'.$endereco.'", "'.$telefone.'",)'; //valor_debito.'", "'.$observacao.'")';
+
+$sql = 'INSERT INTO aluno_dados (nome, cpf, nascimento, email, endereco, telefone, sexo, data_pagamento, valor_debito, observacao, data_matricula) VALUES ("'.$nome.'", "'.$cpf.'", "'.$nascimento.'", "'.$email.'", "'.$endereco.'", "'.$telefone.'", "'.$sexo.'", "'.$data_pagamento.'", "'.$valor_debito.'", "'.$observacao.'", "'. $data .'");';
+
+$result = mysqli_query($link, $sql);
+echo $sql;
+
+
+//header('Location: manage-users.php')
+?>
+
